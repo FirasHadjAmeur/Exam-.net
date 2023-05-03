@@ -13,7 +13,7 @@ namespace Examen.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+          
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
