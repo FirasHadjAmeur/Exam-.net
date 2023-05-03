@@ -11,10 +11,10 @@ namespace Examen.ApplicationCore.Domain
     {
         public int Quantite { get; set; }
 
-        public string NumCmd { get; set; }
-        public int IdPlat { get; set; }
+        public string CommandeFk { get; set; }
+        public int PlatFk { get; set; }
 
-        [ForeignKey("NumCmd")]
+        [ForeignKey("CommandeFk")]
         public Commande Commande { get; set; }
         public Plat Plat { get; set; }
     }
