@@ -15,7 +15,7 @@ namespace Examen.ApplicationCore.Domain
         public int PlatFk { get; set; }
 
         [ForeignKey("CommandeFk")]
-        public Commande Commande { get; set; }
-        public Plat Plat { get; set; }
+        public virtual Commande Commande { get; set; }
+        public virtual Plat Plat { get; set; }
     }
 }

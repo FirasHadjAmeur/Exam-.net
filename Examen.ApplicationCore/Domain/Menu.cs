@@ -13,6 +13,6 @@ namespace Examen.ApplicationCore.Domain
 
         public DateTime DateMenu { get; set; }
    
-        public List<Plat> Plats { get; set; }
+        public virtual List<Plat> Plats { get; set; }
     }
 }

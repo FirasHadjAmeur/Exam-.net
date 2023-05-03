@@ -1,5 +1,6 @@
 ﻿
 using Examen.ApplicationCore.Domain;
+using Examen.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Examen.Infrastructure
@@ -15,16 +16,19 @@ namespace Examen.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=ExamenDB32;Integrated Security=true");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=FirasHadjAmeurDB;Integrated Security=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new LigneCommandesConfiguration());
+
             modelBuilder.Entity<Commande>().HasKey(c => c.NumCmd);
-            modelBuilder.Entity<LigneCommande>().HasKey(lc => new { lc.NumCmd, lc.IdPlat });
             modelBuilder.Entity<Livreur>().HasKey(l => l.IdLivreur);
             modelBuilder.Entity<Menu>().HasKey(m => m.Id);
             modelBuilder.Entity<Plat>().HasKey(p => p.IdPlat);
+
+        
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

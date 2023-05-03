@@ -14,9 +14,12 @@ namespace Examen.ApplicationCore.Domain
 
         [Display(Name = "Date Commande")]
         public DateTime DateCmd { get; set; }
+
+        public int LivreurFK { get; set; }
+
         public bool livree { get; set; }
 
-        public Livreur livreur { get; set; }
+        public virtual Livreur livreur { get; set; }
 
         public virtual IList<LigneCommande> LigneCommandes { get; set; }
     }

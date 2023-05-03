@@ -13,7 +13,7 @@ namespace Examen.ApplicationCore.Domain
 
         public Status Status { get; set; }
         
-        public List<Commande> Commandes { get; set; }
+        public virtual List<Commande> Commandes { get; set; }
     }
 
     public enum Status { 
